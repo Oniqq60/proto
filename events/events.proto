@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package events;
+
+option go_package = "github.com/Oniqq60/proto/gen/events;events";
+
+service EventService {
+  rpc StreamEvents(stream EventRequest) returns (stream EventResponse);
+}
+
+message EventRequest {
+  string event_type = 1; // "SUBSCRIBE", "UNSUBSCRIBE"
+  string target_id = 2;  // channel_id или guild_id
+}
+
+message EventResponse {
+  string event_type = 1; // "MESSAGE_CREATED", "USER_STATUS_UPDATED"
+  string payload = 2;    // JSON с данными
+}

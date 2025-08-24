@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package messages;
+
+option go_package = "github.com/Oniqq60/proto/gen/messages;messages";
+
+import "common/types.proto";
+service MessageService {
+  rpc SendMessage(SendMessageRequest) returns (MessageResponse);
+  rpc GetMessages(GetMessagesRequest) returns (MessagesList);
+}
+
+message SendMessageRequest {
+  common.ChannelId channel_id = 1;
+  common.UserId author_id = 2;
+  string content = 3;
+}
+
+message GetMessagesRequest {
+  common.ChannelId channel_id = 1;
+  int32 limit = 2;
+}
+
+message MessageResponse {
+  string message_id = 1;
+  common.UserId author_id = 2;
+  string content = 3;
+  common.Timestamp created_at = 4;
+}
+
+message MessagesList {
+  repeated MessageResponse messages = 1;
+}

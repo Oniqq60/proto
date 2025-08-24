@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package users;
+
+option go_package = "github.com/Oniqq60/proto/gen/users;users";
+
+import "common/types.proto";
+
+service UserService {
+  rpc GetUser(GetUserRequest) returns (UserResponse);
+  rpc UpdateStatus(UpdateStatusRequest) returns (UserResponse);
+  rpc UpdateProfile(UpdateProfileRequest) returns (UserResponse);
+  rpc GetFriends(GetFriendsRequest) returns (FriendsList);
+  rpc AddFriend(AddFriendRequest) returns (FriendResponse);
+}
+
+message GetUserRequest {
+  common.UserId user_id = 1;
+}
+
+message UpdateStatusRequest {
+  common.UserId user_id = 1;
+  string status = 2;
+}
+
+message UpdateProfileRequest {
+  common.UserId user_id = 1;
+  string username = 2;
+  string avatar_url = 3;
+}
+
+message UserResponse {
+  common.UserId user_id = 1;
+  string username = 2;
+  string status = 3;
+  string avatar_url = 4;
+}
+
+message GetFriendsRequest {
+  common.UserId user_id = 1;
+}
+
+message FriendsList {
+  repeated UserResponse friends = 1;
+}
+
+message AddFriendRequest {
+  common.UserId user_id = 1;
+  common.UserId friend_id = 2;
+}
+
+message FriendResponse {
+  bool success = 1;
+}

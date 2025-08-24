@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package channels;
+
+option go_package = "github.com/Oniqq60/proto/gen/channels;channels";
+
+import "common/types.proto";
+
+service ChannelService {
+  rpc CreateChannel(CreateChannelRequest) returns (ChannelResponse);
+  rpc GetChannels(GetChannelsRequest) returns (ChannelsList);
+}
+
+message CreateChannelRequest {
+  common.GuildId guild_id = 1;
+  string name = 2;
+}
+
+message GetChannelsRequest {
+  common.GuildId guild_id = 1;
+}
+
+message ChannelResponse {
+  common.ChannelId channel_id = 1;
+  string name = 2;
+}
+
+message ChannelsList {
+  repeated ChannelResponse channels = 1;
+}

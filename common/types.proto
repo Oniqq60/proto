@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package common;
+
+option go_package = "github.com/Oniqq60/proto/gen/common;common";
+
+// Уникальный ID пользователя (UUID - уникальная строка)
+message UserId {
+  string id = 1;
+}
+
+// ID гильдии (сервер сообщества)
+message GuildId {
+  string id = 1;
+}
+
+// ID канала (чат внутри гильдии)
+message ChannelId {
+  string id = 1;
+}
+
+// Время создания объекта (ISO 8601 формат "2025-08-24T15:00:00Z")
+message Timestamp {
+  string iso = 1;
+}
