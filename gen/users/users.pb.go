@@ -178,6 +178,7 @@ type User struct {
 	Username      string                 `protobuf:"bytes,2,opt,name=username,proto3" json:"username,omitempty"`
 	Status        string                 `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
 	AvatarUrl     string                 `protobuf:"bytes,4,opt,name=avatar_url,json=avatarUrl,proto3" json:"avatar_url,omitempty"`
+	Email         string                 `protobuf:"bytes,5,opt,name=email,proto3" json:"email,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -236,6 +237,13 @@ func (x *User) GetStatus() string {
 func (x *User) GetAvatarUrl() string {
 	if x != nil {
 		return x.AvatarUrl
+	}
+	return ""
+}
+
+func (x *User) GetEmail() string {
+	if x != nil {
+		return x.Email
 	}
 	return ""
 }
@@ -342,13 +350,14 @@ const file_users_users_proto_rawDesc = "" +
 	"\n" +
 	"avatar_url\x18\x03 \x01(\tR\tavatarUrl\"<\n" +
 	"\x11DeleteUserRequest\x12'\n" +
-	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\"\x82\x01\n" +
+	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\"\x98\x01\n" +
 	"\x04User\x12'\n" +
 	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\x12\x1a\n" +
 	"\busername\x18\x02 \x01(\tR\busername\x12\x16\n" +
 	"\x06status\x18\x03 \x01(\tR\x06status\x12\x1d\n" +
 	"\n" +
-	"avatar_url\x18\x04 \x01(\tR\tavatarUrl\"/\n" +
+	"avatar_url\x18\x04 \x01(\tR\tavatarUrl\x12\x14\n" +
+	"\x05email\x18\x05 \x01(\tR\x05email\"/\n" +
 	"\fUserResponse\x12\x1f\n" +
 	"\x04user\x18\x01 \x01(\v2\v.users.UserR\x04user\".\n" +
 	"\x12DeleteUserResponse\x12\x18\n" +

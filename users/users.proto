@@ -33,6 +33,7 @@ message User {
   string username = 2;
   string status = 3;
   string avatar_url = 4;
+  string email = 5;
 }
 
 // ========== Responses ==========
