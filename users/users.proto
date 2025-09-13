@@ -14,6 +14,7 @@ service UserService {
   rpc AddFriend(AddFriendRequest) returns (FriendResponse);
 }
 
+// ========== Requests ==========
 message GetUserRequest {
   common.UserId user_id = 1;
 }
@@ -29,24 +30,30 @@ message UpdateProfileRequest {
   string avatar_url = 3;
 }
 
-message UserResponse {
+message GetFriendsRequest {
+  common.UserId user_id = 1;
+}
+
+message AddFriendRequest {
+  common.UserId user_id = 1;
+  common.UserId friend_id = 2;
+}
+
+// ========== Entities ==========
+message User {
   common.UserId user_id = 1;
   string username = 2;
   string status = 3;
   string avatar_url = 4;
 }
 
-message GetFriendsRequest {
-  common.UserId user_id = 1;
+// ========== Responses ==========
+message UserResponse {
+  User user = 1;
 }
 
 message FriendsList {
-  repeated UserResponse friends = 1;
-}
-
-message AddFriendRequest {
-  common.UserId user_id = 1;
-  common.UserId friend_id = 2;
+  repeated User friends = 1;
 }
 
 message FriendResponse {
