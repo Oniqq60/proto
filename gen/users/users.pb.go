@@ -72,6 +72,7 @@ type UpdateProfileRequest struct {
 	UserId        *common.UserId         `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Username      string                 `protobuf:"bytes,2,opt,name=username,proto3" json:"username,omitempty"`
 	AvatarUrl     string                 `protobuf:"bytes,3,opt,name=avatar_url,json=avatarUrl,proto3" json:"avatar_url,omitempty"`
+	Email         string                 `protobuf:"bytes,4,opt,name=email,proto3" json:"email,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,6 +124,13 @@ func (x *UpdateProfileRequest) GetUsername() string {
 func (x *UpdateProfileRequest) GetAvatarUrl() string {
 	if x != nil {
 		return x.AvatarUrl
+	}
+	return ""
+}
+
+func (x *UpdateProfileRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
 	}
 	return ""
 }
@@ -343,12 +351,13 @@ const file_users_users_proto_rawDesc = "" +
 	"\n" +
 	"\x11users/users.proto\x12\x05users\x1a\x12common/types.proto\"9\n" +
 	"\x0eGetUserRequest\x12'\n" +
-	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\"z\n" +
+	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\"\x90\x01\n" +
 	"\x14UpdateProfileRequest\x12'\n" +
 	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\x12\x1a\n" +
 	"\busername\x18\x02 \x01(\tR\busername\x12\x1d\n" +
 	"\n" +
-	"avatar_url\x18\x03 \x01(\tR\tavatarUrl\"<\n" +
+	"avatar_url\x18\x03 \x01(\tR\tavatarUrl\x12\x14\n" +
+	"\x05email\x18\x04 \x01(\tR\x05email\"<\n" +
 	"\x11DeleteUserRequest\x12'\n" +
 	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\"\x98\x01\n" +
 	"\x04User\x12'\n" +
