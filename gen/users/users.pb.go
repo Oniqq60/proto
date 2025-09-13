@@ -67,58 +67,6 @@ func (x *GetUserRequest) GetUserId() *common.UserId {
 	return nil
 }
 
-type UpdateStatusRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        *common.UserId         `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *UpdateStatusRequest) Reset() {
-	*x = UpdateStatusRequest{}
-	mi := &file_users_users_proto_msgTypes[1]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *UpdateStatusRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UpdateStatusRequest) ProtoMessage() {}
-
-func (x *UpdateStatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_users_users_proto_msgTypes[1]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UpdateStatusRequest.ProtoReflect.Descriptor instead.
-func (*UpdateStatusRequest) Descriptor() ([]byte, []int) {
-	return file_users_users_proto_rawDescGZIP(), []int{1}
-}
-
-func (x *UpdateStatusRequest) GetUserId() *common.UserId {
-	if x != nil {
-		return x.UserId
-	}
-	return nil
-}
-
-func (x *UpdateStatusRequest) GetStatus() string {
-	if x != nil {
-		return x.Status
-	}
-	return ""
-}
-
 type UpdateProfileRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        *common.UserId         `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -130,7 +78,7 @@ type UpdateProfileRequest struct {
 
 func (x *UpdateProfileRequest) Reset() {
 	*x = UpdateProfileRequest{}
-	mi := &file_users_users_proto_msgTypes[2]
+	mi := &file_users_users_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -142,7 +90,7 @@ func (x *UpdateProfileRequest) String() string {
 func (*UpdateProfileRequest) ProtoMessage() {}
 
 func (x *UpdateProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_users_users_proto_msgTypes[2]
+	mi := &file_users_users_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -155,7 +103,7 @@ func (x *UpdateProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateProfileRequest.ProtoReflect.Descriptor instead.
 func (*UpdateProfileRequest) Descriptor() ([]byte, []int) {
-	return file_users_users_proto_rawDescGZIP(), []int{2}
+	return file_users_users_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *UpdateProfileRequest) GetUserId() *common.UserId {
@@ -179,28 +127,28 @@ func (x *UpdateProfileRequest) GetAvatarUrl() string {
 	return ""
 }
 
-type GetFriendsRequest struct {
+type DeleteUserRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        *common.UserId         `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetFriendsRequest) Reset() {
-	*x = GetFriendsRequest{}
-	mi := &file_users_users_proto_msgTypes[3]
+func (x *DeleteUserRequest) Reset() {
+	*x = DeleteUserRequest{}
+	mi := &file_users_users_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetFriendsRequest) String() string {
+func (x *DeleteUserRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetFriendsRequest) ProtoMessage() {}
+func (*DeleteUserRequest) ProtoMessage() {}
 
-func (x *GetFriendsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_users_users_proto_msgTypes[3]
+func (x *DeleteUserRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_users_users_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -211,66 +159,14 @@ func (x *GetFriendsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetFriendsRequest.ProtoReflect.Descriptor instead.
-func (*GetFriendsRequest) Descriptor() ([]byte, []int) {
-	return file_users_users_proto_rawDescGZIP(), []int{3}
+// Deprecated: Use DeleteUserRequest.ProtoReflect.Descriptor instead.
+func (*DeleteUserRequest) Descriptor() ([]byte, []int) {
+	return file_users_users_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *GetFriendsRequest) GetUserId() *common.UserId {
+func (x *DeleteUserRequest) GetUserId() *common.UserId {
 	if x != nil {
 		return x.UserId
-	}
-	return nil
-}
-
-type AddFriendRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        *common.UserId         `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	FriendId      *common.UserId         `protobuf:"bytes,2,opt,name=friend_id,json=friendId,proto3" json:"friend_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *AddFriendRequest) Reset() {
-	*x = AddFriendRequest{}
-	mi := &file_users_users_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *AddFriendRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*AddFriendRequest) ProtoMessage() {}
-
-func (x *AddFriendRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_users_users_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use AddFriendRequest.ProtoReflect.Descriptor instead.
-func (*AddFriendRequest) Descriptor() ([]byte, []int) {
-	return file_users_users_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *AddFriendRequest) GetUserId() *common.UserId {
-	if x != nil {
-		return x.UserId
-	}
-	return nil
-}
-
-func (x *AddFriendRequest) GetFriendId() *common.UserId {
-	if x != nil {
-		return x.FriendId
 	}
 	return nil
 }
@@ -288,7 +184,7 @@ type User struct {
 
 func (x *User) Reset() {
 	*x = User{}
-	mi := &file_users_users_proto_msgTypes[5]
+	mi := &file_users_users_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -300,7 +196,7 @@ func (x *User) String() string {
 func (*User) ProtoMessage() {}
 
 func (x *User) ProtoReflect() protoreflect.Message {
-	mi := &file_users_users_proto_msgTypes[5]
+	mi := &file_users_users_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -313,7 +209,7 @@ func (x *User) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use User.ProtoReflect.Descriptor instead.
 func (*User) Descriptor() ([]byte, []int) {
-	return file_users_users_proto_rawDescGZIP(), []int{5}
+	return file_users_users_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *User) GetUserId() *common.UserId {
@@ -354,7 +250,7 @@ type UserResponse struct {
 
 func (x *UserResponse) Reset() {
 	*x = UserResponse{}
-	mi := &file_users_users_proto_msgTypes[6]
+	mi := &file_users_users_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -366,7 +262,7 @@ func (x *UserResponse) String() string {
 func (*UserResponse) ProtoMessage() {}
 
 func (x *UserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_users_users_proto_msgTypes[6]
+	mi := &file_users_users_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -379,7 +275,7 @@ func (x *UserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserResponse.ProtoReflect.Descriptor instead.
 func (*UserResponse) Descriptor() ([]byte, []int) {
-	return file_users_users_proto_rawDescGZIP(), []int{6}
+	return file_users_users_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UserResponse) GetUser() *User {
@@ -389,72 +285,28 @@ func (x *UserResponse) GetUser() *User {
 	return nil
 }
 
-type FriendsList struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Friends       []*User                `protobuf:"bytes,1,rep,name=friends,proto3" json:"friends,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *FriendsList) Reset() {
-	*x = FriendsList{}
-	mi := &file_users_users_proto_msgTypes[7]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *FriendsList) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*FriendsList) ProtoMessage() {}
-
-func (x *FriendsList) ProtoReflect() protoreflect.Message {
-	mi := &file_users_users_proto_msgTypes[7]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use FriendsList.ProtoReflect.Descriptor instead.
-func (*FriendsList) Descriptor() ([]byte, []int) {
-	return file_users_users_proto_rawDescGZIP(), []int{7}
-}
-
-func (x *FriendsList) GetFriends() []*User {
-	if x != nil {
-		return x.Friends
-	}
-	return nil
-}
-
-type FriendResponse struct {
+type DeleteUserResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *FriendResponse) Reset() {
-	*x = FriendResponse{}
-	mi := &file_users_users_proto_msgTypes[8]
+func (x *DeleteUserResponse) Reset() {
+	*x = DeleteUserResponse{}
+	mi := &file_users_users_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *FriendResponse) String() string {
+func (x *DeleteUserResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*FriendResponse) ProtoMessage() {}
+func (*DeleteUserResponse) ProtoMessage() {}
 
-func (x *FriendResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_users_users_proto_msgTypes[8]
+func (x *DeleteUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_users_users_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -465,12 +317,12 @@ func (x *FriendResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use FriendResponse.ProtoReflect.Descriptor instead.
-func (*FriendResponse) Descriptor() ([]byte, []int) {
-	return file_users_users_proto_rawDescGZIP(), []int{8}
+// Deprecated: Use DeleteUserResponse.ProtoReflect.Descriptor instead.
+func (*DeleteUserResponse) Descriptor() ([]byte, []int) {
+	return file_users_users_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *FriendResponse) GetSuccess() bool {
+func (x *DeleteUserResponse) GetSuccess() bool {
 	if x != nil {
 		return x.Success
 	}
@@ -483,20 +335,14 @@ const file_users_users_proto_rawDesc = "" +
 	"\n" +
 	"\x11users/users.proto\x12\x05users\x1a\x12common/types.proto\"9\n" +
 	"\x0eGetUserRequest\x12'\n" +
-	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\"V\n" +
-	"\x13UpdateStatusRequest\x12'\n" +
-	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\x12\x16\n" +
-	"\x06status\x18\x02 \x01(\tR\x06status\"z\n" +
+	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\"z\n" +
 	"\x14UpdateProfileRequest\x12'\n" +
 	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\x12\x1a\n" +
 	"\busername\x18\x02 \x01(\tR\busername\x12\x1d\n" +
 	"\n" +
 	"avatar_url\x18\x03 \x01(\tR\tavatarUrl\"<\n" +
-	"\x11GetFriendsRequest\x12'\n" +
-	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\"h\n" +
-	"\x10AddFriendRequest\x12'\n" +
-	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\x12+\n" +
-	"\tfriend_id\x18\x02 \x01(\v2\x0e.common.UserIdR\bfriendId\"\x82\x01\n" +
+	"\x11DeleteUserRequest\x12'\n" +
+	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\"\x82\x01\n" +
 	"\x04User\x12'\n" +
 	"\auser_id\x18\x01 \x01(\v2\x0e.common.UserIdR\x06userId\x12\x1a\n" +
 	"\busername\x18\x02 \x01(\tR\busername\x12\x16\n" +
@@ -504,18 +350,14 @@ const file_users_users_proto_rawDesc = "" +
 	"\n" +
 	"avatar_url\x18\x04 \x01(\tR\tavatarUrl\"/\n" +
 	"\fUserResponse\x12\x1f\n" +
-	"\x04user\x18\x01 \x01(\v2\v.users.UserR\x04user\"4\n" +
-	"\vFriendsList\x12%\n" +
-	"\afriends\x18\x01 \x03(\v2\v.users.UserR\afriends\"*\n" +
-	"\x0eFriendResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess2\xc1\x02\n" +
+	"\x04user\x18\x01 \x01(\v2\v.users.UserR\x04user\".\n" +
+	"\x12DeleteUserResponse\x12\x18\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess2\xca\x01\n" +
 	"\vUserService\x125\n" +
-	"\aGetUser\x12\x15.users.GetUserRequest\x1a\x13.users.UserResponse\x12?\n" +
-	"\fUpdateStatus\x12\x1a.users.UpdateStatusRequest\x1a\x13.users.UserResponse\x12A\n" +
-	"\rUpdateProfile\x12\x1b.users.UpdateProfileRequest\x1a\x13.users.UserResponse\x12:\n" +
+	"\aGetUser\x12\x15.users.GetUserRequest\x1a\x13.users.UserResponse\x12A\n" +
+	"\rUpdateProfile\x12\x1b.users.UpdateProfileRequest\x1a\x13.users.UserResponse\x12A\n" +
 	"\n" +
-	"GetFriends\x12\x18.users.GetFriendsRequest\x1a\x12.users.FriendsList\x12;\n" +
-	"\tAddFriend\x12\x17.users.AddFriendRequest\x1a\x15.users.FriendResponseB*Z(github.com/Oniqq60/proto/gen/users;usersb\x06proto3"
+	"DeleteUser\x12\x18.users.DeleteUserRequest\x1a\x19.users.DeleteUserResponseB*Z(github.com/Oniqq60/proto/gen/users;usersb\x06proto3"
 
 var (
 	file_users_users_proto_rawDescOnce sync.Once
@@ -529,44 +371,33 @@ func file_users_users_proto_rawDescGZIP() []byte {
 	return file_users_users_proto_rawDescData
 }
 
-var file_users_users_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_users_users_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_users_users_proto_goTypes = []any{
 	(*GetUserRequest)(nil),       // 0: users.GetUserRequest
-	(*UpdateStatusRequest)(nil),  // 1: users.UpdateStatusRequest
-	(*UpdateProfileRequest)(nil), // 2: users.UpdateProfileRequest
-	(*GetFriendsRequest)(nil),    // 3: users.GetFriendsRequest
-	(*AddFriendRequest)(nil),     // 4: users.AddFriendRequest
-	(*User)(nil),                 // 5: users.User
-	(*UserResponse)(nil),         // 6: users.UserResponse
-	(*FriendsList)(nil),          // 7: users.FriendsList
-	(*FriendResponse)(nil),       // 8: users.FriendResponse
-	(*common.UserId)(nil),        // 9: common.UserId
+	(*UpdateProfileRequest)(nil), // 1: users.UpdateProfileRequest
+	(*DeleteUserRequest)(nil),    // 2: users.DeleteUserRequest
+	(*User)(nil),                 // 3: users.User
+	(*UserResponse)(nil),         // 4: users.UserResponse
+	(*DeleteUserResponse)(nil),   // 5: users.DeleteUserResponse
+	(*common.UserId)(nil),        // 6: common.UserId
 }
 var file_users_users_proto_depIdxs = []int32{
-	9,  // 0: users.GetUserRequest.user_id:type_name -> common.UserId
-	9,  // 1: users.UpdateStatusRequest.user_id:type_name -> common.UserId
-	9,  // 2: users.UpdateProfileRequest.user_id:type_name -> common.UserId
-	9,  // 3: users.GetFriendsRequest.user_id:type_name -> common.UserId
-	9,  // 4: users.AddFriendRequest.user_id:type_name -> common.UserId
-	9,  // 5: users.AddFriendRequest.friend_id:type_name -> common.UserId
-	9,  // 6: users.User.user_id:type_name -> common.UserId
-	5,  // 7: users.UserResponse.user:type_name -> users.User
-	5,  // 8: users.FriendsList.friends:type_name -> users.User
-	0,  // 9: users.UserService.GetUser:input_type -> users.GetUserRequest
-	1,  // 10: users.UserService.UpdateStatus:input_type -> users.UpdateStatusRequest
-	2,  // 11: users.UserService.UpdateProfile:input_type -> users.UpdateProfileRequest
-	3,  // 12: users.UserService.GetFriends:input_type -> users.GetFriendsRequest
-	4,  // 13: users.UserService.AddFriend:input_type -> users.AddFriendRequest
-	6,  // 14: users.UserService.GetUser:output_type -> users.UserResponse
-	6,  // 15: users.UserService.UpdateStatus:output_type -> users.UserResponse
-	6,  // 16: users.UserService.UpdateProfile:output_type -> users.UserResponse
-	7,  // 17: users.UserService.GetFriends:output_type -> users.FriendsList
-	8,  // 18: users.UserService.AddFriend:output_type -> users.FriendResponse
-	14, // [14:19] is the sub-list for method output_type
-	9,  // [9:14] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	6, // 0: users.GetUserRequest.user_id:type_name -> common.UserId
+	6, // 1: users.UpdateProfileRequest.user_id:type_name -> common.UserId
+	6, // 2: users.DeleteUserRequest.user_id:type_name -> common.UserId
+	6, // 3: users.User.user_id:type_name -> common.UserId
+	3, // 4: users.UserResponse.user:type_name -> users.User
+	0, // 5: users.UserService.GetUser:input_type -> users.GetUserRequest
+	1, // 6: users.UserService.UpdateProfile:input_type -> users.UpdateProfileRequest
+	2, // 7: users.UserService.DeleteUser:input_type -> users.DeleteUserRequest
+	4, // 8: users.UserService.GetUser:output_type -> users.UserResponse
+	4, // 9: users.UserService.UpdateProfile:output_type -> users.UserResponse
+	5, // 10: users.UserService.DeleteUser:output_type -> users.DeleteUserResponse
+	8, // [8:11] is the sub-list for method output_type
+	5, // [5:8] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_users_users_proto_init() }
@@ -580,7 +411,7 @@ func file_users_users_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_users_users_proto_rawDesc), len(file_users_users_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   9,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
